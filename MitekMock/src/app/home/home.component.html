@@ -1,14 +1,21 @@
-<div class="container">
-<div class="text-center">
-    <h2 class="text-info">10x Mock</h2>    
-</div>
-<form role = "form">  
-  <div class = "form-group">
-     <label for = "file">Select file</label>
-     
-   <select >  
-      <option *ngFor="let prod of file">{{prod.fileName}} </option>  
-  </select>
-</div>
-</form>
+<div class="container container-styles">
+  <div class="text-center">
+    <h2 class="panel-heading">10x Mock</h2>
+  </div>
+  <form class="form-horizontal" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="file" class="col-xs-4 control-label" style="text-align:left">Select file</label>
+
+      <select class="col-xs-8" (change)="selectfile($event.target.value)">
+        <option value="" disabled>Choose the file to Mock</option>
+        <option *ngFor="let prod of file">{{prod}} </option>
+      </select>
+      <div class="col-xs-3">
+        <button (click)="onSubmit()" class="btn btn-primary" [disabled]="!loginForm.form.valid">Mock the Selected
+          File</button>
+      </div>
+      <div *ngIf="msg" style="color:red">{{msg}}</div>
+
+    </div>
+  </form>
 </div>
