@@ -3,6 +3,7 @@ import { files } from './files';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from "rxjs/index";
 import { catchError } from 'rxjs/operators';
+import { mockedResponse } from './mockedResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,11 @@ export class HomeserviceService {
      return this.http.get('http://localhost:2883/mitek/setFile/'+selectedFile, {responseType: 'text'}).pipe(
       catchError(this.handleError));
   }
+
+  getMockedResponse():Observable<mockedResponse[]> {
+    return this.http.get<mockedResponse[]>('http://localhost:2883/mitek/response/mocked').pipe(
+     catchError(this.handleError));
+ }
 
 
   private handleError(err: HttpErrorResponse) {
