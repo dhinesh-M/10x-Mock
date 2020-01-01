@@ -1,41 +1,70 @@
-<div class="container container-styles">
-  <div class="text-center">
-    <h2 class="panel-heading">10x Mock</h2>
-       <img align="right" src="assets/img/10x.jpg" alt="" style="width:100px" >
-    </div>
-  <div class="panel-body padding">
-    <form class="form-horizontal" #loginForm="ngForm">
-      <div class="form-group">
-        <label for="file" class="col-sm-2 control-label" style="text-align:left">Select file</label>
+<head>
+  <style>
+    body {
+      background-image: url('assets/img/background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .wrap{
+      width: 100%;
+      height: 60px;
+      margin:0;    }
 
-        <select class="col-sm-3" (change)="selectfile($event.target.value)">
-          <option value="" disabled>Choose the file to Mock</option>
-          <option *ngFor="let prod of file">{{prod}} </option>
-        </select>
-        <div class="col-sm-3">
-          <button (click)="onSubmit()" class="btn btn-danger" [disabled]="!flag">Mock the Selected
-            File</button>
-        </div>
-        <br>
-        <div *ngIf="msg" style="color:red">{{msg}}</div>
-        <table class='table' *ngIf='msg' style="margin-bottom: 0px; margin-right: 0px">
-          <thead>
-            <tr class="tableheadercolor">
-              <th class="center">API</th>
-              <th class="center">Status</th>
-              <th class="center">Response</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor='let res of mockResponse; let i=index'>
-              <td class="center">{{res.api}}</td>
-              <td class="center"> {{res.statusCode}}</td>
-              <td class="center">{{res.response}}</td>
-            </tr>
-          </tbody>
-        </table>
+  </style>
+</head>
 
+<body>
+  <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+    <div class="container-fluid" style="background-color:rgb(88, 44, 131)">
+      <div class="navbar-header">
+        <span class="navbar-brand">
+          <img src="assets/img/10x.png">
+        </span>
+        <span class="navbar-brand">
+          <h3 class=" text-light text-white" href="#"> Mock tenx</h3>
+        </span>
       </div>
-    </form>
+      <ul class="nav navbar-nav">
+        <li><a class="text-light" href="https://www.10xbanking.com/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container container-styles">
+    <!-- <div style="background-image: url('background.jpg');"></div> -->
+    <!-- <img src="assets/img/background.jpg"  alt=""> -->
+    <div class="panel-body padding">
+      <form class="form-horizontal" #loginForm="ngForm">
+        <div class="form-group">
+          <label for="file" class="col-sm-2 control-label " style="text-align:left">Select file</label>
+
+          <select class="col-sm-3" (change)="selectfile($event.target.value)">
+            <option value="" disabled>Choose the file to Mock</option>
+            <option *ngFor="let prod of file">{{prod}} </option>
+          </select>
+          <div class="col-sm-3">
+            <button (click)="onSubmit()" class="btn btn-primary" [disabled]="!flag">Mock the Selected
+              File</button>
+          </div>
+          <br>
+          <div *ngIf="msg" style="color:red">{{msg}}</div>
+          <table class='table' *ngIf='msg' style="margin-bottom: 0px; margin-right: 0px">
+            <thead>
+              <tr class="tableheadercolor">
+                <th class="center">API</th>
+                <th class="center">Status</th>
+                <th class="center">Response</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let res of mockResponse; let i=index'>
+                <td class="center">{{res.api}}</td>
+                <td class="center"> {{res.statusCode}}</td>
+                <td class="center">{{res.response}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+</body>
