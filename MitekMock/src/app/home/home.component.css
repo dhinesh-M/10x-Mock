@@ -1,9 +1,4 @@
-#bg {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
+.big-banner{
+  background-image: url('E:\VS code workspace\10x-Mock\MitekMock\src\assets\img\background.jpg');
+  background-size: 100%;
 }
