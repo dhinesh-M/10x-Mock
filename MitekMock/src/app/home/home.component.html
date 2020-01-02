@@ -1,23 +1,21 @@
-  <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-    <div class="container-fluid" style="background-color:rgb(88, 44, 131)">
+  <nav class='navbar navbar-expand-md 'style="background-color:rgb(88, 44, 131)">
+    <div class="container-fluid" >
       <div class="navbar-header">
-        <span class="navbar-brand">
+        <a class="navbar-brand">
           <img src="assets/img/10x.png">
-        </span>
-        <span class="navbar-brand">
-          <h3 class=" text-light text-white" href="#"> Mock tenx</h3>
-        </span>
+        </a>
+        <a class="navbar-brand">
+          <h3 class=" text-light text-white" href="#"> Dev Helper </h3>
+        </a>
       </div>
       <ul class="nav navbar-nav">
         <li><a class="text-light" href="https://www.10xbanking.com/">About</a></li>
       </ul>
     </div>
   </nav>
-  <div class="jumbotron big-banner text-light" style="height: 500px; padding-top:40px;">
+  <div class="jumbotron big-banner text-light" style="height: 750px; padding-top:40px;">
   <div class="container container-styles">
-    <!-- <div style="background-image: url('background.jpg');"></div> -->
-    <!-- <img src="assets/img/background.jpg"  alt=""> -->
-    <div class="panel-body padding">
+       <div class="panel-body padding">
       <form class="form-horizontal" #loginForm="ngForm">
         <div class="form-group">
           <label for="file" class="col-sm-2 control-label " style="text-align:left">Select file</label>
@@ -31,10 +29,10 @@
               File</button>
           </div>
           <br>
-          <div *ngIf="msg" style="color:red">{{msg}}</div>
-          <table class='table' *ngIf='msg' style="margin-bottom: 0px; margin-right: 0px">
+          <div *ngIf="msg" style="color:rgb(0, 191, 255)">{{msg}}</div>
+          <table class='table text-light text-white' *ngIf='msg' style="margin-bottom: 0px; margin-right: 0px">
             <thead>
-              <tr class="tableheadercolor">
+              <tr class="tableheadercolor ">
                 <th class="center">API</th>
                 <th class="center">Status</th>
                 <th class="center">Response</th>
