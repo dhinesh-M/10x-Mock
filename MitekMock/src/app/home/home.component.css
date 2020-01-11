@@ -1,4 +1,13 @@
-.big-banner{
-  background-image: url('E:\VS code workspace\10x-Mock\MitekMock\src\assets\img\background.jpg');
-  background-size: 100%;
+
+
+.jumbotron{
+  
+  background: url('E:\VS code workspace\10x-Mock\MitekMock\src\assets\img\background.jpg');
+  background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
 }
+
+table.fixed { table-layout:fixed; }
+table.fixed td { overflow: hidden; }

@@ -1,24 +1,10 @@
-  <nav class='navbar navbar-expand-md 'style="background-color:rgb(88, 44, 131)">
-    <div class="container-fluid" >
-      <div class="navbar-header">
-        <a class="navbar-brand">
-          <img src="assets/img/10x.png">
-        </a>
-        <a class="navbar-brand">
-          <h3 class=" text-light text-white" href="#"> Dev Helper </h3>
-        </a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li><a class="text-light" href="https://www.10xbanking.com/">About</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="jumbotron big-banner text-light" style="height: 750px; padding-top:40px;">
+<app-navbar></app-navbar>
+  <div class="jumbotron" >
   <div class="container container-styles">
        <div class="panel-body padding">
       <form class="form-horizontal" #loginForm="ngForm">
         <div class="form-group">
-          <label for="file" class="col-sm-2 control-label " style="text-align:left">Select file</label>
+          <label for="file" class="col-sm-2 control-label text-light" style="text-align:left">Select file</label>
 
           <select class="col-sm-3" (change)="selectfile($event.target.value)">
             <option value="" disabled>Choose the file to Mock</option>
@@ -30,19 +16,21 @@
           </div>
           <br>
           <div *ngIf="msg" style="color:rgb(0, 191, 255)">{{msg}}</div>
-          <table class='table text-light text-white' *ngIf='msg' style="margin-bottom: 0px; margin-right: 0px">
+          <table class='table text-light text-white fixed' *ngIf='msg' style="margin-bottom: 0px; margin-right: 0px">
             <thead>
               <tr class="tableheadercolor ">
-                <th class="center">API</th>
-                <th class="center">Status</th>
-                <th class="center">Response</th>
+                <th style="width:25%" class="center">API</th>
+                <th style="width:15%">Request_Method</th>
+                <th style="width:12%">Status</th>
+                <th style="width:51%">Response</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor='let res of mockResponse; let i=index'>
-                <td class="center">{{res.api}}</td>
-                <td class="center"> {{res.statusCode}}</td>
-                <td class="center">{{res.response}}</td>
+                <td class="">{{res.api}}</td>
+                <td class="">{{res.requestMethod}}</td>
+                <td class=""> {{res.statusCode}}</td>
+                <td class="">{{res.response}}</td>
               </tr>
             </tbody>
           </table>
