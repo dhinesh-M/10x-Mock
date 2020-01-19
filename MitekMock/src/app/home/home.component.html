@@ -1,11 +1,10 @@
-<app-navbar></app-navbar>
-  <div class="jumbotron" >
+
+<div class="scroll jumbotron bordr">
   <div class="container container-styles">
-       <div class="panel-body padding">
+    <div class="panel-body padding">
       <form class="form-horizontal" #loginForm="ngForm">
         <div class="form-group">
           <label for="file" class="col-sm-2 control-label text-light" style="text-align:left">Select file</label>
-
           <select class="col-sm-3" (change)="selectfile($event.target.value)">
             <option value="" disabled>Choose the file to Mock</option>
             <option *ngFor="let prod of file">{{prod}} </option>
