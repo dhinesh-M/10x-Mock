@@ -1,0 +1,16 @@
+<div class="jumbotron bordr w3-container">
+    <form class="w3-container ">
+        <h2 class="text-light">Welcome to Mock Service </h2>
+        <div>
+            <input class="col-sm-2  form-control-sm" name="applicationName" type="text" [(ngModel)]="appName"
+                #applicationName="ngModel" placeholder="Create new MockService" required>
+            <button class="col-sm-1 btn btn-primary" type="button" [disabled]="!appName" (click)="createApp()">Create
+            </button>
+            <div *ngIf="applicationName.touched && !applicationName.valid" style="color:red">application Name is
+                required</div>
+            <div class="alert text-light" *ngIf="showMyMessage">
+                <span style="color:green">{{msg}}</span>
+            </div>
+        </div>
+    </form>
+</div>

@@ -12,13 +12,3 @@
     position: fixed;   
     
    }
-   .bordr
- {
-  border:2px solid black;
- }
- .scroll { 
-  height: 110px; 
-  overflow-y: hidden; 
-  overflow-y: auto; 
-  text-align:left; 
-} 

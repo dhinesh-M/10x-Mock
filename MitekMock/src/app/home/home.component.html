@@ -13,8 +13,9 @@
             <button (click)="onSubmit()" class="btn btn-primary" [disabled]="!flag">Mock the Selected
               File</button>
           </div>
+          <marquee class="text-white">Use http://localhost:2883/mockit as Base URL</marquee>
           <br>
-          <div *ngIf="msg" style="color:rgb(0, 191, 255)">{{msg}}</div>
+          <div *ngIf="msg" style="color:rgb(21, 165, 212)">{{msg}}</div>
           <table class='table text-light text-white fixed' *ngIf='msg' style="margin-bottom: 0px; margin-right: 0px">
             <thead>
               <tr class="tableheadercolor ">

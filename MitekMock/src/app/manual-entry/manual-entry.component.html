@@ -1,0 +1,54 @@
+<div class="scroll jumbotron bordr">
+    <div class="container container-styles">
+        <div class="panel-body padding">
+            <form class="form-horizontal" #loginForm="ngForm">
+                <div class="form-group">
+                    <p class="p-3 mb-2 bg-secondary text-white">Click <a class="text-white" href="/home" >here</a> to mock by file</p>
+                    <table class='table text-light text-white fixed' style="margin-bottom: 0px; margin-right: 0px">
+                        <thead>
+                            <tr class="tableheadercolor ">
+                                <th style="width:20%" class="center">API</th>
+                                <th style="width:20%">Request_Method</th>
+                                <th style="width:12%">Status</th>
+                                <th style="width:30%">Response</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="">
+                                    <input class="" name="API" type="text" [(ngModel)]="request.api"
+                                        #applicationName="ngModel" placeholder="API" required>
+                                </td>
+                                <td>
+                                    <select class="custom-select" (change)="changeReqMethod($event.target.value)"
+                                        name="ReqMethod">
+                                        <option value="" disabled>Request Method</option>
+                                        <option *ngFor="let method of req_method" [ngValue]="method">{{method}}
+                                    </select>
+                                </td>
+                                <td>
+                                    <input name="code" type="number" [(ngModel)]="request.statusCode"
+                                        #applicationName="ngModel" placeholder="StatusCode" required>
+                                </td>
+                                <td>
+                                    <textarea name="Body" rows="1" cols="35" [(ngModel)]="request.body"
+                                        placeholder="Body" required></textarea>
+                                  </td>
+                                  <td>
+                                    <button (click)="addApi()" class="btn btn-primary">Add</button>
+                                  </td>
+                                  <td>
+                                      <button type="reset" class="btn btn-primary">reset</button>
+                                  </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

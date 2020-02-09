@@ -7,12 +7,18 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
+import { HomeAddAppComponent } from './home-add-app/home-add-app.component';
+import { GetAppListComponent } from './get-app-list/get-app-list.component';
+import { ManualEntryComponent } from './manual-entry/manual-entry.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    AboutComponent
+    AboutComponent,
+    HomeAddAppComponent,
+    GetAppListComponent,
+    ManualEntryComponent
     
   ],
   imports: [
@@ -20,6 +26,7 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   
   ],
   providers: [],

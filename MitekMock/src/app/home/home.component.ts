@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit {
   }
   );
   this.mockedResponseonse();
-   
  }
 
  mockedResponseonse()
