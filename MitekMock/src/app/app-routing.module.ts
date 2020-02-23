@@ -9,10 +9,10 @@ import { ManualEntryComponent } from './manual-entry/manual-entry.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'chooseFile', component: HomeComponent },
   {path: 'createApp', component: HomeAddAppComponent},
   {path:'getAppList',component:GetAppListComponent},
-  {path:'manualEntry',component:ManualEntryComponent},
+   { path: 'manualEntry',component: ManualEntryComponent} ,
   { path: '', redirectTo: '/createApp', pathMatch: 'full' }
 ];
 

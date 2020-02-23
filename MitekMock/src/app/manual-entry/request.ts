@@ -1,6 +1,6 @@
 export class Request {
-    public api: string;
-    public requestMethod: string;
-    public statusCode: string;
-    public body: string; 
+    public api: String;
+    public requestMethod: String;
+    public statusCode: String;
+    public response: String; 
 }

@@ -3,10 +3,10 @@
         <div class="panel-body padding">
             <form class="form-horizontal" #loginForm="ngForm">
                 <div class="form-group">
-                    <p class="p-3 mb-2 bg-secondary text-white">Click <a class="text-white" href="/home" >here</a> to mock by file</p>
-                    <table class='table text-light text-white fixed' style="margin-bottom: 0px; margin-right: 0px">
-                        <thead>
-                            <tr class="tableheadercolor ">
+                    <p class="p-3 mb-2  text-white">Click <a class="text-white" href="/home" >here</a> to mock by file</p>
+                    <table class='table table-striped table-dark text-light text-white fixed'  style="margin-bottom: 0px; margin-right: 0px">
+                        <thead class=thead-dark>
+                            <tr >
                                 <th style="width:20%" class="center">API</th>
                                 <th style="width:20%">Request_Method</th>
                                 <th style="width:12%">Status</th>
@@ -19,36 +19,63 @@
                             <tr>
                                 <td class="">
                                     <input class="" name="API" type="text" [(ngModel)]="request.api"
-                                        #applicationName="ngModel" placeholder="API" required>
+                                        #applicationName="ngModel" placeholder="API" required=''>
                                 </td>
                                 <td>
-                                    <select class="custom-select" (change)="changeReqMethod($event.target.value)"
-                                        name="ReqMethod">
-                                        <option value="" disabled>Request Method</option>
+                                    <select class="custom-select" 
+                                        name="ReqMethod" [(ngModel)]="request.requestMethod">
+                                        <option value="" disabled selected>Request Method</option>
                                         <option *ngFor="let method of req_method" [ngValue]="method">{{method}}
                                     </select>
                                 </td>
                                 <td>
-                                    <input name="code" type="number" [(ngModel)]="request.statusCode"
+                                    <input name="code" type="text" [(ngModel)]="request.statusCode"
                                         #applicationName="ngModel" placeholder="StatusCode" required>
                                 </td>
                                 <td>
-                                    <textarea name="Body" rows="1" cols="35" [(ngModel)]="request.body"
+                                    <textarea name="Body" rows="1" cols="35" [(ngModel)]="request.response"
                                         placeholder="Body" required></textarea>
                                   </td>
                                   <td>
-                                    <button (click)="addApi()" class="btn btn-primary">Add</button>
+                                    <button type="reset" class="btn btn-primary" (click)="addApi()" >Add</button>
                                   </td>
                                   <td>
                                       <button type="reset" class="btn btn-primary">reset</button>
                                   </td>
-
                             </tr>
                         </tbody>
                     </table>
 
                 </div>
             </form>
+           
+            <table class='table table-striped  text-light text-white fixed' *ngIf='arrayLengthFlag' style="margin-bottom: 0px; margin-right: 0px" >
+              <thead class=thead-light>
+                <tr class="">
+                  <th style="width:20%" class="center">API</th>
+                  <th style="width:12%">Request_Method</th>
+                  <th style="width:12%">Status</th>
+                  <th style="width:38%">Response</th>
+                  <th style="width:7%"></th>
+                  <th style="width:7%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let res of mockResponse; let i=index' >
+                  <td class="">{{res.api}}</td>
+                  <td class="">{{res.requestMethod}}</td>
+                  <td class=""> {{res.statusCode}}</td>
+                  <td class="">{{res.response}}</td>
+                  <td>
+                    <button type="button" class="btn btn-danger" (click)="setClickedRow(i)" (click)="editRow()">Edit</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-danger" (click)="setClickedRow(i)" (click)="deleteRow()" >Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+         
         </div>
     </div>
 </div>

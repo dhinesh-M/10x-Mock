@@ -17,8 +17,8 @@ export class HomeserviceService {
       catchError(this.handleError));
   }
 
-  selectFile(selectedFile:string) {
-     return this.http.get('http://localhost:2883/mitek/setFile/'+selectedFile, {responseType: 'text'}).pipe(
+  selectFile(selectedFile:string,appName:String) {
+     return this.http.get('http://localhost:2883/mitek/setFile/'+selectedFile+"/"+appName, {responseType: 'text'}).pipe(
       catchError(this.handleError));
   }
 

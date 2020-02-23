@@ -1,16 +1,46 @@
 <div class="jumbotron bordr w3-container">
     <form class="w3-container ">
         <h2 class="text-light">Welcome to Mock Service </h2>
-        <div>
-            <input class="col-sm-2  form-control-sm" name="applicationName" type="text" [(ngModel)]="appName"
-                #applicationName="ngModel" placeholder="Create new MockService" required>
-            <button class="col-sm-1 btn btn-primary" type="button" [disabled]="!appName" (click)="createApp()">Create
-            </button>
-            <div *ngIf="applicationName.touched && !applicationName.valid" style="color:red">application Name is
-                required</div>
-            <div class="alert text-light" *ngIf="showMyMessage">
-                <span style="color:green">{{msg}}</span>
-            </div>
+        <table>
+            <tr>
+                <td style="width:20%">
+                    <label class="text-light ">Application Name</label>
+                </td>
+                <td style="width:20%">
+                    <input class="form-control-sm" name="applicationName" type="text" [(ngModel)]="appName"
+                        #applicationName="ngModel" placeholder="Create new MockService" required>
+                    <div *ngIf="applicationName.touched && !applicationName.valid" style="color:red">application
+                        Name is required
+                    </div>
+                   
+                </td>
+            </tr>
+            <tr>
+
+                <td style="width:20%">
+                    <label class="text-light ">Mock Method</label>
+                </td>
+                <td style="width:20%">
+                    <select class="custom-select " name="MockMethod" [(ngModel)]="mocMethod">
+                        <option value="" disabled selected>Mock Method</option>
+                        <option *ngFor="let method of mockMethod" [ngValue]="method">{{method}}
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+
+                <td>
+                    <button class=" btn btn-primary" type="button" [disabled]="!appName" (click)="createApp()">Create
+                    </button>
+                </td>
+
+            </tr>
+
+        </table>
+        <div class="alert text-light" *ngIf="showMyMessage">
+            <span style="color:green">{{msg}}</span>
         </div>
     </form>
 </div>
